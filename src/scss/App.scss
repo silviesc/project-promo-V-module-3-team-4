@@ -24,11 +24,7 @@
     color: white;
   }
   
-  .main {
-    display: flex;
-    padding-top: 50px;
-    // height: 80vh;
-  }
+
   .main .title {
     color: #ffffff;
     text-align: center;
@@ -56,13 +52,11 @@
     );
   }
   
-  // .main .preview {
-  //   width: 60%;
-  // }
+  
   
   .main .form {
     background-color: #302c42;
-    // width: 40%;
+    width: 40%;
   }
   
   // .main .project,
