@@ -9,8 +9,9 @@ function App() {
   <>
     <div className="container">
       <header className="header">
+        <i class="fa-solid fa-laptop-code icon"></i>
         <p className="text">Proyectos Molones</p>
-        <img src={logo} alt="logo"/>
+        <img src={logo} alt="logo" className= "logo"/>
       </header>
       <main className="main">
         <section className="preview">
@@ -133,6 +134,9 @@ function App() {
           </section>
         </section>
       </main>
+     <footer className="footer">
+      <img src={logo} alt="logo" className= "logo"/>  
+     </footer>
     </div>
   </>
   )
