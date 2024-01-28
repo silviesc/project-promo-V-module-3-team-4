@@ -9,8 +9,11 @@ function App() {
   <>
     <div className="container">
       <header className="header">
-        <p className="text">Proyectos Molones</p>
-        <img src={logo} alt="logo"/>
+        <div class="div">
+          <i class="fa-solid fa-laptop-code icon"></i>
+          <p className="text">Proyectos Molones</p>
+        </div>
+        <img src={logo} alt="logo" class="img"/>
       </header>
       <main className="main">
         <section className="preview">
