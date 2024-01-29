@@ -38,7 +38,7 @@ function App() {
     <>
       <div className="container">
         <header className="header">
-          <i class="fa-solid fa-laptop-code icon"></i>
+          <i className="fa-solid fa-laptop-code icon"></i>
           <p className="text">Proyectos Molones</p>
           <img src={logo} alt="logo" className="logo" />
         </header>
