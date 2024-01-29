@@ -3,9 +3,6 @@
 
 .container {
   background-image: radial-gradient(circle at center, #403a5f, #211e2e);
-  // background-color: #302c42;
-  // width: 100vw;
-  // height: 100vh;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -37,8 +34,6 @@
 	display: flex;
   flex-direction: column;
   align-items: center;
-	// padding-top: 50px;
-	// height: 80vh;
 	@media (min-width: 768px) {
 		// padding-top: 0px;
     flex-direction: row;
@@ -244,6 +239,8 @@
 	}
 }
 
+//Botones que aún no usamos
+
 // .btn-color {
 // 	border-radius: 20px;
 // 	width: 85px;
@@ -263,7 +260,6 @@
 
 .footer {
 	height: 10vh;
-	// width: 100vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
