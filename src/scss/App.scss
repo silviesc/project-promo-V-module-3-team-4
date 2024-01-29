@@ -2,7 +2,8 @@
 @import 'layout/card';
 
 .container {
-  background-color: #302c42;
+  background-image: radial-gradient(circle at center, #403a5f, #211e2e);
+  // background-color: #302c42;
   // width: 100vw;
   // height: 100vh;
   padding: 20px;
@@ -41,6 +42,7 @@
 	@media (min-width: 768px) {
 		// padding-top: 0px;
     flex-direction: row;
+    gap: 50px;
 	}
 }
 
@@ -87,15 +89,6 @@
 	}
 }
 
-.main .form {
-  background-image: radial-gradient(circle at center, #403a5f, #211e2e);
-  width: 100vw;
-  padding: 34px;
-  @media screen and (min-width: 768px) {
-      width: 50%;
-    }
-}
-
 .main .title {
   color: #ffffff;
   text-align: center;
@@ -114,6 +107,7 @@
 .main .ask-info .subtitle {
   padding-bottom: 10px;
   font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
 }
 .main .ask-info .line {
 	width: 100%;
@@ -127,10 +121,17 @@
 	);
 }
 
+.main .project,
+.main .autor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: none;
+}
 
 .main .input,
 .textarea {
-  background-color: #302c42;
+  background-color: transparent;
   border-color: white;
   border-radius: 40px;
   height: 42.72px;
@@ -138,7 +139,10 @@
   padding-left: 15px;
   padding-top: 5px;
   font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
 }
+
+
 .main .input::placeholder,
 .textarea::placeholder {
   color: #ffffff;
@@ -159,7 +163,6 @@
 	color: white;
 	text-align: center;
 	border: none;
-
 	height: 43px;
 	background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
 	border-radius: 40px;
@@ -169,6 +172,16 @@
 	width: 200px;
 	border: solid 2px white;
 }
+
+.main .form {
+  background-color: transparent;
+  width: 100vw;
+  padding: 34px;
+  @media screen and (min-width: 768px) {
+      width: 50%;
+    }
+}
+
 
 .btn-color {
 	border-radius: 20px;
@@ -199,7 +212,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #302c42;
+	background-color: transparent;
 }
 @media screen and (min-width: 1024px) {
 	.header {

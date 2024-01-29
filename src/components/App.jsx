@@ -22,7 +22,7 @@ function App() {
         <section className="preview">
           <img className="image preview__image" src={cover} alt="" />
 
-          <section className="autor preview__autor">
+          <section className="preview__autor">
             <section className="info-project previewProject">
               <p className="subtitle previewProject__subtitle">Personal Project Card</p>
               <hr className="line previewProject__line" />
@@ -135,7 +135,7 @@ function App() {
           </section>
 
           <section className="card">
-            <span className=""> La tarjeta ha sido creada: </span>
+            <span className="hidden"> La tarjeta ha sido creada: </span>
             <a href="" className="" target="_blank" rel="noreferrer"> </a>
           </section>
         </section>
