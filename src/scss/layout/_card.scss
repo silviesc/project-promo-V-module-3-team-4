@@ -1,14 +1,14 @@
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center; //para que al agrandarse se ensanchen los márgenes
-  @media (min-width: 768px) {
-    display: flex;
-    padding-top: 50px;
-    height: 100vh;
-    flex-direction: row;
-  }
-}
+// .main {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center; //para que al agrandarse se ensanchen los márgenes
+//   @media (min-width: 768px) {
+//     display: flex;
+//     padding-top: 50px;
+//     height: 100vh;
+//     flex-direction: row;
+//   }
+// }
 
 .preview {
   display: flex;
