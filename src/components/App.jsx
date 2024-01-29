@@ -16,21 +16,21 @@ function App() {
   const [job, setJob] = useState('');
 
   const handleChange = (event) => {
-    if (event.target.id === name) {
-      setProjectName(event.target.value);
-    } else if (event.target.id === slogan) {
+    if (event.target.id === "name") {
+      setProjectName(event.target.value); 
+    } else if (event.target.id === "slogan") {
       setSlogan(event.target.value);
-    } else if (event.target.id === repo) {
+    } else if (event.target.id === "repo") {
       setRepository(event.target.value);
-    } else if (event.target.id === demo) {
+    } else if (event.target.id === "demo") {
       setDemo(event.target.value);
-    } else if (event.target.id === technologies) {
+    } else if (event.target.id === "technologies") {
       setTech(event.target.value)
-    } else if (event.target.id === desc) {
+    } else if (event.target.id === "desc") {
       setDesc(event.target.value);
-    } else if (event.target.id === autor) {
+    } else if (event.target.id === "autor") {
       setUserName(event.target.value);
-    } else if (event.target.id === job) {
+    } else if (event.target.id === "job") {
       setJob(event.target.value);
     }
   }
@@ -39,7 +39,7 @@ function App() {
   <>
     <div className="container">
       <header className="header">
-        <i class="fa-solid fa-laptop-code icon"></i>
+        <i className="fa-solid fa-laptop-code icon"></i>
         <p className="text">Proyectos Molones</p>
         <img src={logo} alt="logo" className= "logo"/>
       </header>
@@ -64,7 +64,7 @@ function App() {
               </p>
               <section className="technologies previewProject__technologies">
                 <p className="text previewProject__technologies--text">{tech || 'React JS, MongoDB'}</p>
-                <i class="fa-solid fa-globe previewProject__technologies--world"><a href={demo}></a></i> 
+                <i className="fa-solid fa-globe previewProject__technologies--world"><a href={demo}></a></i> 
                 <i className="fa-brands fa-github previewProject__technologies--github"><a href={repository}></a></i>
                       
               </section>
@@ -78,7 +78,7 @@ function App() {
           </section>
         </section>
 
-        <section className="form" onChange={handleChange}>
+        <section className="form">
           <h2 className="title">Información</h2>
 
           <section className="ask-info">
@@ -86,13 +86,14 @@ function App() {
             <hr className="line" />
           </section>
 
-          <fieldset className="project">
+          <fieldset className="project"  onChange={handleChange}>
             <input
               className="input"
               type="text"
               placeholder="Nombre del proyecto"
               name="name"
               id="name"
+             
             />
             <input
               className="input"
@@ -100,6 +101,7 @@ function App() {
               name="slogan"
               id="slogan"
               placeholder="Slogan"
+            
             />
             <input
               className="input"
@@ -107,6 +109,7 @@ function App() {
               name="repo"
               id="repo"
               placeholder="Repo"
+          
             />
             <input
               className="input"
@@ -114,6 +117,7 @@ function App() {
               placeholder="Demo"
               name="demo"
               id="demo"
+             
             />
             <input
               className="input"
@@ -121,6 +125,7 @@ function App() {
               placeholder="Tecnologías"
               name="technologies"
               id="technologies"
+          
             />
             <textarea
               className="textarea"
@@ -128,6 +133,7 @@ function App() {
               placeholder="Descripción"
               name="desc"
               id="desc"
+              
             ></textarea>
           </fieldset>
 
@@ -136,13 +142,14 @@ function App() {
             <hr className="line" />
           </section>
 
-          <fieldset className="autor">
+          <fieldset className="autor"  onChange={handleChange}>
             <input
               className="input"
               type="text"
               placeholder="Nombre"
               name="autor"
               id="autor"
+          
             />
             <input
               className="input"
@@ -150,6 +157,7 @@ function App() {
               placeholder="Trabajo"
               name="job"
               id="job"
+
             />
           </fieldset>
 
@@ -157,11 +165,11 @@ function App() {
             <button className="btn">Subir foto de proyecto</button>
             <button className="btn">Subir foto de autora</button>
           </section>
-          <section className="buttons-img">
+          {/* <section className="buttons-img">
             <button className="btn-large" onClick="{handleClickCreateCard}">
               Crear Tarjeta
             </button>
-          </section>
+          </section> */}
 
           <section className="card">
             <span className="hidden"> La tarjeta ha sido creada: </span>
