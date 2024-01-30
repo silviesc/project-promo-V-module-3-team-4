@@ -178,9 +178,9 @@ function App() {
               <button className="form__buttonsImg--upload">Subir foto de autora</button>
             </section>
             <section className="form__buttonsImg">
-              <button className="form__buttonsImg--create" onClick="{handleClickCreateCard}">
+              {/*<button className="form__buttonsImg--create" onClick="{handleClickCreateCard}">
                 Crear Tarjeta
-              </button>
+              </button>*/}
             </section>
 
             <section className="form__card">
