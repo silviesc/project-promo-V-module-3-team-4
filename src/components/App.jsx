@@ -77,7 +77,7 @@ function App() {
                   <p className="text previewProject__technologies--text">
                     {tech || "React JS, MongoDB"}
                   </p>
-                  <i class="fa-solid fa-globe previewProject__technologies--world">
+                  <i className="fa-solid fa-globe previewProject__technologies--world">
                     <a href={demo}></a>
                   </i>
                   <i className="fa-brands fa-github previewProject__technologies--github">
