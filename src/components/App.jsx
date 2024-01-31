@@ -14,23 +14,23 @@ function App() {
   const [desc, setDesc] = useState("");
   const [userName, setUserName] = useState("");
   const [job, setJob] = useState("");
-  const handleChange = (event) => {
-    if (event.target.id === 'name') {
-      setProjectName(event.target.value);
-    } else if (event.target.id === 'slogan') {
-      setSlogan(event.target.value);
-    } else if (event.target.id === 'repo') {
-      setRepository(event.target.value);
-    } else if (event.target.id === 'demo') {
-      setDemo(event.target.value);
-    } else if (event.target.id === 'technologies') {
-      setTech(event.target.value);
-    } else if (event.target.id === 'desc') {
-      setDesc(event.target.value);
-    } else if (event.target.id === 'autor') {
-      setUserName(event.target.value);
-    } else if (event.target.id === 'job') {
-      setJob(event.target.value);
+  const handleChange = (id,value) => {
+    if (id === 'name') {
+      setProjectName(value);
+    } else if (id === 'slogan') {
+      setSlogan(value);
+    } else if (id === 'repo') {
+      setRepository(value);
+    } else if (id === 'demo') {
+      setDemo(value);
+    } else if (id === 'technologies') {
+      setTech(value);
+    } else if (id === 'desc') {
+      setDesc(value);
+    } else if (id === 'autor') {
+      setUserName(value);
+    } else if (id === 'job') {
+      setJob(value);
     }
   };
 
@@ -38,7 +38,7 @@ function App() {
     <>
       <div className="container">
         <Header/>
-        <Main/>
+        <Main projectName={projectName} slogan={slogan} repository={repository} demo={demo} tech={tech} desc={desc} userName ={userName} job={job} handleChange={handleChange}/>
         <Footer/>
       </div>
     </>

@@ -1,7 +1,12 @@
 
-const Form = () => {
+const Form = ({projectName,slogan,repository,demo,tech,desc,userName,job, handleChange}) => {
+  const handleForm = (ev) =>{
+    const id = ev.target.id;
+    const value = ev.target.value;
+    handleChange (id,value);
+  }
     return (
-        <section className="form" onChange={handleChange}>
+        <section className="form" onChange={handleForm}>
         <h2 className="form__title">Información</h2>
 
         <section className="form__askInfo">
@@ -10,47 +15,47 @@ const Form = () => {
         </section>
 
         <fieldset className="form__project">
-          <input
+          <input 
             className="form__project--input"
             type="text"
             placeholder="Nombre del proyecto"
-            name="name"
-            id="name"
+            name={projectName}
+            id={projectName}
           />
           <input
             className="form__project--input"
             type="text"
-            name="slogan"
-            id="slogan"
+            name={slogan}
+            id={slogan}
             placeholder="Slogan"
           />
           <input
             className="form__project--input"
             type="text"
-            name="repo"
-            id="repo"
+            name= {repository}
+            id={repository}
             placeholder="Repo"
           />
           <input
             className="form__project--input"
             type="text"
             placeholder="Demo"
-            name="demo"
-            id="demo"
+            name={demo}
+            id={demo}
           />
           <input
             className="form__project--input"
             type="text"
             placeholder="Tecnologías"
-            name="technologies"
-            id="technologies"
+            name={tech}
+            id={tech}
           />
           <textarea
             className="form__project--textarea"
             type="text"
             placeholder="Descripción"
-            name="desc"
-            id="desc"
+            name={desc}
+            id={desc}
           ></textarea>
         </fieldset>
 
@@ -64,15 +69,15 @@ const Form = () => {
             className="form__autor--input"
             type="text"
             placeholder="Nombre"
-            name="autor"
-            id="autor"
+            name={userName}
+            id={userName}
           />
           <input
             className="form__autor--input"
             type="text"
             placeholder="Trabajo"
-            name="job"
-            id="job"
+            name={job}
+            id={job}
           />
         </fieldset>
 
