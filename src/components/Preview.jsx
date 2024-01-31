@@ -1,7 +1,7 @@
 import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
 
-const Preview = () => {
+const Preview = ({projectName,slogan,repository,demo,tech,desc,userName,job}) => {
     return (
         <section className="preview">
         <img className="image preview__image" src={cover} alt="" />
