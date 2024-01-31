@@ -14,20 +14,21 @@ function App() {
   const [desc, setDesc] = useState("");
   const [userName, setUserName] = useState("");
   const [job, setJob] = useState("");
+  
   const handleChange = (id,value) => {
     if (id === 'name') {
       setProjectName(value);
     } else if (id === 'slogan') {
       setSlogan(value);
-    } else if (id === 'repo') {
+    } else if (id === 'repository') {
       setRepository(value);
     } else if (id === 'demo') {
       setDemo(value);
-    } else if (id === 'technologies') {
+    } else if (id === 'tech') {
       setTech(value);
     } else if (id === 'desc') {
       setDesc(value);
-    } else if (id === 'autor') {
+    } else if (id === 'userName') {
       setUserName(value);
     } else if (id === 'job') {
       setJob(value);

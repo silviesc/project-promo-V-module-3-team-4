@@ -20,7 +20,6 @@ const Preview = ({projectName,slogan,repository,demo,tech,desc,userName,job}) =>
               {slogan || "Diseños Exclusivos"}
             </p>
             <p className="previewProject__desc">
-              {" "}
               {desc ||
                 "Product Description. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae voluptas consequuntur tempore libero veritatis."}
             </p>

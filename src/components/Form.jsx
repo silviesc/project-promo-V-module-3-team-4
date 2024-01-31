@@ -1,12 +1,12 @@
 
-const Form = ({projectName,slogan,repository,demo,tech,desc,userName,job, handleChange}) => {
+const Form = ({handleChange}) => {
   const handleForm = (ev) =>{
     const id = ev.target.id;
     const value = ev.target.value;
-    handleChange (id,value);
+    handleChange (id, value);
   }
     return (
-        <section className="form" onChange={handleForm}>
+        <section className="form">
         <h2 className="form__title">Información</h2>
 
         <section className="form__askInfo">
@@ -19,43 +19,49 @@ const Form = ({projectName,slogan,repository,demo,tech,desc,userName,job, handle
             className="form__project--input"
             type="text"
             placeholder="Nombre del proyecto"
-            name={projectName}
-            id={projectName}
+            name="name"
+            id="name"
+            onChange={handleForm}
           />
           <input
             className="form__project--input"
             type="text"
-            name={slogan}
-            id={slogan}
+            name="slogan"
+            id="slogan"
             placeholder="Slogan"
+            onChange={handleForm}
           />
           <input
             className="form__project--input"
             type="text"
-            name= {repository}
-            id={repository}
+            name= "repository"
+            id="repository"
             placeholder="Repo"
+            onChange={handleForm}
           />
           <input
             className="form__project--input"
             type="text"
             placeholder="Demo"
-            name={demo}
-            id={demo}
+            name="demo"
+            id="demo"
+            onChange={handleForm}
           />
           <input
             className="form__project--input"
             type="text"
             placeholder="Tecnologías"
-            name={tech}
-            id={tech}
+            name="tech"
+            id="tech"
+            onChange={handleForm}
           />
           <textarea
             className="form__project--textarea"
             type="text"
             placeholder="Descripción"
-            name={desc}
-            id={desc}
+            name="desc"
+            id="desc"
+            onChange={handleForm}
           ></textarea>
         </fieldset>
 
@@ -69,15 +75,17 @@ const Form = ({projectName,slogan,repository,demo,tech,desc,userName,job, handle
             className="form__autor--input"
             type="text"
             placeholder="Nombre"
-            name={userName}
-            id={userName}
+            name="userName"
+            id="userName"
+            onChange={handleForm}
           />
           <input
             className="form__autor--input"
             type="text"
             placeholder="Trabajo"
-            name={job}
-            id={job}
+            name="job"
+            id="job"
+            onChange={handleForm}
           />
         </fieldset>
 
