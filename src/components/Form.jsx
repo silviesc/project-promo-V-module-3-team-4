@@ -89,7 +89,29 @@ const Form = ({ handleChange }) => {
         />
       </fieldset>
 
-      {/* ... */}
+      <section className="form__buttonsImg">
+        <button className="form__buttonsImg--upload">
+          Subir foto de proyecto
+        </button>
+        <button className="form__buttonsImg--upload">
+          Subir foto de autora
+        </button>
+      </section>
+      <section className="form__buttonsImg">
+        <button
+          className="form__buttonsImg--create"
+          onClick="{handleClickCreateCard}"
+        >
+          Crear Tarjeta
+        </button>
+      </section>
+
+      <section className="form__card">
+        <span className="hidden"> La tarjeta ha sido creada: </span>
+        <a href="" className="" target="_blank" rel="noreferrer">
+          {" "}
+        </a>
+      </section>
     </section>
   );
 };
