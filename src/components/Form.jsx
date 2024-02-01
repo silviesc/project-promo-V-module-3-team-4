@@ -1,9 +1,4 @@
 const Form = ({ handleChange }) => {
-  // const handleForm = (ev) => {
-  //   const id = ev.target.id;
-  //   const value = ev.target.value;
-  //   handleChange(id, value);
-  // };
 
   return (
     <section className="form">
