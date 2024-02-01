@@ -1,5 +1,4 @@
 import "../scss/App.scss";
-
 import { useState } from "react";
 import Header from "./Header";
 import Main from "./Main";
@@ -23,11 +22,11 @@ function App() {
       setRepository(value);
     } else if (id === 'demo') {
       setDemo(value);
-    } else if (id === 'technologies') {
+    } else if (id === 'tech') {
       setTech(value);
     } else if (id === 'desc') {
       setDesc(value);
-    } else if (id === 'autor') {
+    } else if (id === 'author') {
       setUserName(value);
     } else if (id === 'job') {
       setJob(value);
