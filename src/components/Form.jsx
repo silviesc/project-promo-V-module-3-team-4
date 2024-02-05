@@ -2,7 +2,7 @@ import GetAvatar from './GetAvatar';
 
 const Form = ({ handleInput }) => {
 	return (
-		<section className="form">
+		<form className="form">
 			<h2 className="form__title">Información</h2>
 
 			<section className="form__askInfo">
@@ -116,7 +116,7 @@ const Form = ({ handleInput }) => {
 					{' '}
 				</a>
 			</section>
-		</section>
+		</form>
 	);
 };
 
