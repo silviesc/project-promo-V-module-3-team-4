@@ -1,69 +1,44 @@
-// // Fichero src/components/App.jsx
-import { useEffect, useState } from "react";
-import ls from "./localStorage";
+// Fichero src/services/localStorage.js
 
-const App = () => {
-  // Estados
-
-  // En vez de leer la propiedad name leemos la propiedad data y su valor por defecto es un objeto vacío: ls.get('data', {})
-  // Del objeto (vacío o relleno que nos devuelve ls.get) obtenemos la propiedad name: ls.get('data', {}).name
-  // Si la propiedad name existe la usamos, si no, usamos un string vacío: ls.get('data', {}).name || ''
-  const [name, setName] = useState(ls.get("data", {}).name || "");
-  // Lo mismo para el email
-  const [email, setEmail] = useState(ls.get("data", {}).email || "");
-
-  // useEffect
-
-  // Usamos useEffect para guardar los datos en el local storage
-  useEffect(() => {
-    // En vez de guardar el nombre por un lado y el email por otro
-    // Guardamos en el local storage un objeto data con las propiedad name y email: { name: 'loquesea', email: 'loquefuere' }
-    ls.set("data", {
-      name: name,
-      email: email,
-    });
-  }, [name, email]);
-
-  // Eventos
-
-  const handleName = (ev) => {
-    setName(ev.target.value);
-  };
-
-  const handleEmail = (ev) => {
-    setEmail(ev.target.value);
-  };
-
-  return (
-    <div>
-      <h2>Usando el local storage:</h2>
-
-      <form>
-        <label htmlFor="name">Escribe tu nombre:</label>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          placeholder="Maricarmen"
-          value={name}
-          onChange={handleName}
-        />
-        <label htmlFor="email">Escribe tu email:</label>
-        <input
-          type="text"
-          name="email"
-          id="email"
-          placeholder="mari.carmen@gmail.com"
-          value={email}
-          onChange={handleEmail}
-        />
-      </form>
-
-      <h2>Tus datos son:</h2>
-      <p>Tu nombre es: {name}</p>
-      <p>Tu email es: {email}</p>
-    </div>
-  );
+// Función que obtiene una propiedad del local storage
+// Si esta propiedad no existe porque es la primera vez que la usuaria entra en la página, la función devuelve el valor de defaultValue
+// Que esta función devuelva un valor por defecto es una cómoda manera de trabajar, así esta comprobación no la tenemos que hacer en App.js
+const get = (key, defaultValue) => {
+  const localStorageData = localStorage.getItem(key);
+  if (localStorageData === null) {
+    return defaultValue;
+  } else {
+    return JSON.parse(localStorageData);
+  }
 };
 
-export default App;
+// Función que guarda una propiedad y su valor en el local storage
+const set = (key, value) => {
+  const localStorageData = JSON.stringify(value);
+  localStorage.setItem(key, localStorageData);
+};
+
+// Función que borra una propiedad del local storage
+const remove = (key) => {
+  localStorage.removeItem(key);
+};
+
+// Función que limpia todo el local storage
+const clear = () => {
+  localStorage.clear();
+};
+
+// Creamos un objeto temporal, que es el que queremos exportar
+// Este objeto tiene una propiedad get cuyo valor es la función get
+// Este objeto tiene una propiedad set cuyo valor es la función set
+// Este objeto tiene una propiedad remove cuyo valor es la función remove
+// Este objeto tiene una propiedad clear cuyo valor es la función clear
+const objectToExport = {
+  get: get,
+  set: set,
+  remove: remove,
+  clear: clear,
+};
+
+// Exportamos el objeto para que pueda ser usado desde App
+export default objectToExport;
