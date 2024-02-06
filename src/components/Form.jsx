@@ -1,6 +1,6 @@
 import GetAvatar from './GetAvatar';
 
-const Form = ({ handleInput }) => {
+const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 	return (
 		<form className="form">
 			<h2 className="form__title">Información</h2>
@@ -49,8 +49,8 @@ const Form = ({ handleInput }) => {
 					className="form__project--input"
 					type="text"
 					placeholder="Tecnologías"
-					name="tech"
-					id="tech"
+					name="technologies"
+					id="technologies"
 					onChange={(e) => handleInput(e.target.name, e.target.value)}
 				/>
 				<textarea
@@ -104,16 +104,16 @@ const Form = ({ handleInput }) => {
 			<section className="form__buttonsImg">
 				<button
 					className="form__buttonsImg--create"
-					onClick="{handleClickCreateCard}"
+					onClick={handleClickCreateCard}
 				>
 					Crear Tarjeta
 				</button>
 			</section>
 
 			<section className="form__card">
-				<span className="hidden"> La tarjeta ha sido creada: </span>
-				<a href="" className="" target="_blank" rel="noreferrer">
-					{' '}
+				<span className=""> La tarjeta ha sido creada: </span>
+				<a href={url} className="" target="_blank" rel="noreferrer">
+					{url}
 				</a>
 			</section>
 		</form>
