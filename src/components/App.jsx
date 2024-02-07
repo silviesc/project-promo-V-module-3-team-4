@@ -26,6 +26,7 @@ function App() {
 		const inputName = name;
 		setDataCard({ ...dataCard, [inputName]: inputValue });
 	};
+	
 
   const handleClickCreateCard =(e)=>{
     e.preventDefault();
