@@ -1,7 +1,11 @@
-const Form = ({ handleChange }) => {
+import GetAvatar from "./GetAvatar";
+import Message from "./Message";
+import Error from "./Error";
+
+const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess}) => {
 
   return (
-    <section className="form">
+    <form className="form">
       <h2 className="form__title">Información</h2>
 
       <section className="form__askInfo">
@@ -16,7 +20,8 @@ const Form = ({ handleChange }) => {
           placeholder="Nombre del proyecto"
           name="name"
           id="name"
-          onChange={(e) => handleChange(e.target.id, e.target.value)}
+          value={dataCard.name}
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
         />
         <input
           className="form__project--input"
@@ -24,15 +29,17 @@ const Form = ({ handleChange }) => {
           name="slogan"
           id="slogan"
           placeholder="Slogan"
-          onChange={(e) => handleChange(e.target.id, e.target.value)}
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.slogan}
         />
         <input
           className="form__project--input"
           type="text"
-          name="repository"
-          id="repository"
+          name="repo"
+          id="repo"
           placeholder="Repo"
-          onChange={(e) => handleChange(e.target.id, e.target.value)}
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.repo}
         />
         <input
           className="form__project--input"
@@ -40,15 +47,17 @@ const Form = ({ handleChange }) => {
           placeholder="Demo"
           name="demo"
           id="demo"
-          onChange={(e) => handleChange(e.target.id, e.target.value)}
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.demo}
         />
         <input
           className="form__project--input"
           type="text"
           placeholder="Tecnologías"
-          name="tech"
-          id="tech"
-          onChange={(e) => handleChange(e.target.id, e.target.value)}
+          name="technologies"
+          id="technologies"
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.technologies}
         />
         <textarea
           className="form__project--textarea"
@@ -56,7 +65,8 @@ const Form = ({ handleChange }) => {
           placeholder="Descripción"
           name="desc"
           id="desc"
-          onChange={(e) => handleChange(e.target.id, e.target.value)}
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.desc}
         ></textarea>
       </fieldset>
 
@@ -70,9 +80,10 @@ const Form = ({ handleChange }) => {
           className="form__autor--input"
           type="text"
           placeholder="Nombre"
-          name="author"
-          id="author"
-          onChange={(e) => handleChange(e.target.id, e.target.value)}
+          name="autor"
+          id="autor"
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.autor}
         />
         <input
           className="form__autor--input"
@@ -80,34 +91,37 @@ const Form = ({ handleChange }) => {
           placeholder="Trabajo"
           name="job"
           id="job"
-          onChange={(e) => handleChange(e.target.id, e.target.value)}
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.job}
         />
       </fieldset>
 
       <section className="form__buttonsImg">
-        <button className="form__buttonsImg--upload">
-          Subir foto de proyecto
-        </button>
-        <button className="form__buttonsImg--upload">
-          Subir foto de autora
-        </button>
+        <GetAvatar
+          updateAvatar={handleInput}
+          text="Subir foto de proyecto"
+          nameInput="image"
+        />
+        <GetAvatar
+          updateAvatar={handleInput}
+          text="Subir foto de autora"
+          nameInput="photo"
+        />
       </section>
       <section className="form__buttonsImg">
         <button
           className="form__buttonsImg--create"
-          onClick="{handleClickCreateCard}"
+          onClick={handleClickCreateCard}
         >
           Crear Tarjeta
         </button>
       </section>
 
-      <section className="form__card">
-        <span className="hidden"> La tarjeta ha sido creada: </span>
-        <a href="" className="" target="_blank" rel="noreferrer">
-          {" "}
-        </a>
+      <section>
+        {fetchSuccess === null ? null : fetchSuccess ? <Message url={url}/> : <Error/>}
       </section>
-    </section>
+        
+    </form>
   );
 };
 
