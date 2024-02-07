@@ -1,5 +1,5 @@
 import "../scss/App.scss";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
@@ -38,15 +38,15 @@ function App() {
   const handleClickCreateCard = (e) => {
     e.preventDefault();
     api(dataCard).then((response) => {
-      if (response.succes) {
+      if (response.success) {
         setUrl(response.cardURL);
-        setFetchSuccess(true);
+        setFetchSuccess(true)
       } else {
-        setFetchSuccess(false);
+        setFetchSuccess(false)
       }
-    }, []);
+    });
   };
-
+  
   return (
     <>
       <div className="container">
@@ -56,6 +56,7 @@ function App() {
           handleInput={handleInput}
           handleClickCreateCard={handleClickCreateCard}
           url={url}
+          fetchSuccess={fetchSuccess}
         />
         <Footer />
       </div>

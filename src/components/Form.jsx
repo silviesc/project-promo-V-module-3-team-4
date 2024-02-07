@@ -1,7 +1,8 @@
 import GetAvatar from "./GetAvatar";
 import Message from "./Message";
+import Error from "./Error";
 
-const Form = ({ handleInput, handleClickCreateCard, url, dataCard }) => {
+const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess}) => {
 
   return (
     <form className="form">
@@ -116,7 +117,10 @@ const Form = ({ handleInput, handleClickCreateCard, url, dataCard }) => {
         </button>
       </section>
 
-      <Message url={url}/>
+      <section>
+        {fetchSuccess === null ? null : fetchSuccess ? <Message url={url}/> : <Error/>}
+      </section>
+        
     </form>
   );
 };
