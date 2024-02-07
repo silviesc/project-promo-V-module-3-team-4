@@ -8,7 +8,7 @@ const Main = ({ dataCard, handleInput,  handleClickCreateCard, url }) => {
 			<TitleSection />
 			<div className="main">
 				<Preview dataCard={dataCard} />
-				<Form handleInput={handleInput} handleClickCreateCard={handleClickCreateCard} url={url}/>
+				<Form handleInput={handleInput} handleClickCreateCard={handleClickCreateCard} url={url} dataCard={dataCard}/>
 			</div>
 		</main>
 	);

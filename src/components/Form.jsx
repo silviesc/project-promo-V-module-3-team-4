@@ -1,6 +1,6 @@
 import GetAvatar from './GetAvatar';
 
-const Form = ({ handleInput ,handleClickCreateCard, url}) => {
+const Form = ({ handleInput ,handleClickCreateCard, url, dataCard}) => {
 	return (
 		<form className="form">
 			<h2 className="form__title">Información</h2>
@@ -19,6 +19,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					placeholder="Nombre del proyecto"
 					name="name"
 					id="name"
+					value= {dataCard.name}
 					onChange={(e) => handleInput(e.target.name, e.target.value)}
 				/>
 				<input
@@ -28,6 +29,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					id="slogan"
 					placeholder="Slogan"
 					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					value= {dataCard.slogan}
 				/>
 				<input
 					className="form__project--input"
@@ -36,6 +38,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					id="repo"
 					placeholder="Repo"
 					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					value= {dataCard.repo}
 				/>
 				<input
 					className="form__project--input"
@@ -44,6 +47,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					name="demo"
 					id="demo"
 					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					value= {dataCard.demo}
 				/>
 				<input
 					className="form__project--input"
@@ -52,6 +56,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					name="technologies"
 					id="technologies"
 					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					value= {dataCard.technologies}
 				/>
 				<textarea
 					className="form__project--textarea"
@@ -60,6 +65,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					name="desc"
 					id="desc"
 					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					value= {dataCard.desc}
 				></textarea>
 			</fieldset>
 
@@ -78,6 +84,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					name="autor"
 					id="autor"
 					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					value= {dataCard.autor}
 				/>
 				<input
 					className="form__autor--input"
@@ -86,6 +93,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					name="job"
 					id="job"
 					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					value= {dataCard.job}
 				/>
 			</fieldset>
 
@@ -110,9 +118,9 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 				</button>
 			</section>
 
-			<section className="form__card">
-				<span className=""> La tarjeta ha sido creada: </span>
-				<a href={url} className="" target="_blank" rel="noreferrer">
+			<section className="form__card hidden">{showURL(result)}
+				<span className="form__card--text"> La tarjeta ha sido creada: </span>
+				<a href={url} className="form__card--link" target="_blank" rel="noreferrer">
 					{url}
 				</a>
 			</section>

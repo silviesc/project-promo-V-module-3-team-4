@@ -5,6 +5,8 @@ import Main from "./Main";
 import Footer from "./Footer";
 import api from "../services/api";
 import ls from "../services/localStorage";
+import Message from "./Message";
+import Error from "./Error";
 
 function App() {
   const data = {
@@ -56,8 +58,18 @@ function App() {
       setUrl(response.cardURL);
       console.log(response.cardURL);
       return response;
+      showURL(response);
     });
   };
+
+  
+const showURL=(result)=>{
+  if (result.success) {
+    {<Message/>}
+  } else {
+    {<Error/>}
+  }
+}
 
   return (
     <>
@@ -68,6 +80,7 @@ function App() {
           handleInput={handleInput}
           handleClickCreateCard={handleClickCreateCard}
           url={url}
+        
         />
         <Footer />
       </div>
