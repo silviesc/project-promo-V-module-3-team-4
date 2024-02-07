@@ -31,7 +31,7 @@ function App() {
     e.preventDefault();
   api(dataCard).then((response)=> {
     setUrl(response.cardURL);
-    console.log(response.cardURL);
+    {/*console.log(response.cardURL);*/}
     return response;
 });
   }

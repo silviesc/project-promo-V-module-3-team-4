@@ -19,7 +19,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					placeholder="Nombre del proyecto"
 					name="name"
 					id="name"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					onChange={(e) => handleInput(e.target.name, e.target.value)} 
 				/>
 				<input
 					className="form__project--input"
@@ -35,7 +35,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					name="repo"
 					id="repo"
 					placeholder="Repo"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					onChange={(e) => handleInput(e.target.name, e.target.value)} 
 				/>
 				<input
 					className="form__project--input"
@@ -43,7 +43,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					placeholder="Demo"
 					name="demo"
 					id="demo"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					onChange={(e) => handleInput(e.target.name, e.target.value)} 
 				/>
 				<input
 					className="form__project--input"
@@ -51,7 +51,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					placeholder="Tecnologías"
 					name="technologies"
 					id="technologies"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					onChange={(e) => handleInput(e.target.name, e.target.value)} 
 				/>
 				<textarea
 					className="form__project--textarea"
@@ -59,7 +59,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					placeholder="Descripción"
 					name="desc"
 					id="desc"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					onChange={(e) => handleInput(e.target.name, e.target.value)} 
 				></textarea>
 			</fieldset>
 
@@ -77,7 +77,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					placeholder="Nombre"
 					name="autor"
 					id="autor"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					onChange={(e) => handleInput(e.target.name, e.target.value)} required
 				/>
 				<input
 					className="form__autor--input"
@@ -85,7 +85,7 @@ const Form = ({ handleInput ,handleClickCreateCard, url}) => {
 					placeholder="Trabajo"
 					name="job"
 					id="job"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
+					onChange={(e) => handleInput(e.target.name, e.target.value)} required
 				/>
 			</fieldset>
 
