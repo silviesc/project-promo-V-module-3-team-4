@@ -1,123 +1,124 @@
-import GetAvatar from './GetAvatar';
+import GetAvatar from "./GetAvatar";
+import Message from "./Message";
 
-const Form = ({ handleInput ,handleClickCreateCard, url}) => {
-	return (
-		<form className="form">
-			<h2 className="form__title">Información</h2>
+const Form = ({ handleInput, handleClickCreateCard, url, dataCard }) => {
 
-			<section className="form__askInfo">
-				<p className="form__askInfo--subtitle">
-					Cuéntanos sobre el proyecto
-				</p>
-				<hr className="form__askInfo--line" />
-			</section>
+  return (
+    <form className="form">
+      <h2 className="form__title">Información</h2>
 
-			<fieldset className="form__project">
-				<input
-					className="form__project--input"
-					type="text"
-					placeholder="Nombre del proyecto"
-					name="name"
-					id="name"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
-				/>
-				<input
-					className="form__project--input"
-					type="text"
-					name="slogan"
-					id="slogan"
-					placeholder="Slogan"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
-				/>
-				<input
-					className="form__project--input"
-					type="text"
-					name="repo"
-					id="repo"
-					placeholder="Repo"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
-				/>
-				<input
-					className="form__project--input"
-					type="text"
-					placeholder="Demo"
-					name="demo"
-					id="demo"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
-				/>
-				<input
-					className="form__project--input"
-					type="text"
-					placeholder="Tecnologías"
-					name="technologies"
-					id="technologies"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
-				/>
-				<textarea
-					className="form__project--textarea"
-					type="text"
-					placeholder="Descripción"
-					name="desc"
-					id="desc"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
-				></textarea>
-			</fieldset>
+      <section className="form__askInfo">
+        <p className="form__askInfo--subtitle">Cuéntanos sobre el proyecto</p>
+        <hr className="form__askInfo--line" />
+      </section>
 
-			<section className="form__askInfo">
-				<p className="form__askInfo--subtitle">
-					Cuéntanos sobre la autora
-				</p>
-				<hr className="form__askInfo--line" />
-			</section>
+      <fieldset className="form__project">
+        <input
+          className="form__project--input"
+          type="text"
+          placeholder="Nombre del proyecto"
+          name="name"
+          id="name"
+          value={dataCard.name}
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+        />
+        <input
+          className="form__project--input"
+          type="text"
+          name="slogan"
+          id="slogan"
+          placeholder="Slogan"
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.slogan}
+        />
+        <input
+          className="form__project--input"
+          type="text"
+          name="repo"
+          id="repo"
+          placeholder="Repo"
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.repo}
+        />
+        <input
+          className="form__project--input"
+          type="text"
+          placeholder="Demo"
+          name="demo"
+          id="demo"
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.demo}
+        />
+        <input
+          className="form__project--input"
+          type="text"
+          placeholder="Tecnologías"
+          name="technologies"
+          id="technologies"
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.technologies}
+        />
+        <textarea
+          className="form__project--textarea"
+          type="text"
+          placeholder="Descripción"
+          name="desc"
+          id="desc"
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.desc}
+        ></textarea>
+      </fieldset>
 
-			<fieldset className="form__autor">
-				<input
-					className="form__autor--input"
-					type="text"
-					placeholder="Nombre"
-					name="autor"
-					id="autor"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
-				/>
-				<input
-					className="form__autor--input"
-					type="text"
-					placeholder="Trabajo"
-					name="job"
-					id="job"
-					onChange={(e) => handleInput(e.target.name, e.target.value)}
-				/>
-			</fieldset>
+      <section className="form__askInfo">
+        <p className="form__askInfo--subtitle">Cuéntanos sobre la autora</p>
+        <hr className="form__askInfo--line" />
+      </section>
 
-			<section className="form__buttonsImg">
-				<GetAvatar
-					updateAvatar={handleInput}
-					text="Subir foto de proyecto"
-					nameInput="image"
-				/>
-				<GetAvatar
-					updateAvatar={handleInput}
-					text="Subir foto de autora"
-					nameInput="photo"
-				/>
-			</section>
-			<section className="form__buttonsImg">
-				<button
-					className="form__buttonsImg--create"
-					onClick={handleClickCreateCard}
-				>
-					Crear Tarjeta
-				</button>
-			</section>
+      <fieldset className="form__autor">
+        <input
+          className="form__autor--input"
+          type="text"
+          placeholder="Nombre"
+          name="autor"
+          id="autor"
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.autor}
+        />
+        <input
+          className="form__autor--input"
+          type="text"
+          placeholder="Trabajo"
+          name="job"
+          id="job"
+          onChange={(e) => handleInput(e.target.name, e.target.value)}
+          value={dataCard.job}
+        />
+      </fieldset>
 
-			<section className="form__card">
-				<span className=""> La tarjeta ha sido creada: </span>
-				<a href={url} className="" target="_blank" rel="noreferrer">
-					{url}
-				</a>
-			</section>
-		</form>
-	);
+      <section className="form__buttonsImg">
+        <GetAvatar
+          updateAvatar={handleInput}
+          text="Subir foto de proyecto"
+          nameInput="image"
+        />
+        <GetAvatar
+          updateAvatar={handleInput}
+          text="Subir foto de autora"
+          nameInput="photo"
+        />
+      </section>
+      <section className="form__buttonsImg">
+        <button
+          className="form__buttonsImg--create"
+          onClick={handleClickCreateCard}
+        >
+          Crear Tarjeta
+        </button>
+      </section>
+
+      <Message url={url}/>
+    </form>
+  );
 };
 
 export default Form;

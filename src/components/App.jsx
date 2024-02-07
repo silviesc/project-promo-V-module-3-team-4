@@ -22,26 +22,12 @@ function App() {
       "https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=600",
   };
   const [dataCard, setDataCard] = useState(ls.get("card", data));
-  const [url, setUrl] = useState(ls.get("card", ""));
-
+  const [url, setUrl] = useState("");
+  const [fetchSuccess, setFetchSuccess] = useState(null);
+  
   useEffect(() => {
     ls.set("card", dataCard);
   }, [dataCard])
-
-  // const [dataCard, setDataCard] = useState({
-  //   name: "",
-  //   slogan: "",
-  //   technologies: "",
-  //   repo: "",
-  //   demo: "",
-  //   desc: "",
-  //   autor: "",
-  //   job: "",
-  //   image:
-  //     "https://images.pexels.com/photos/7105/coffee-iphone-laptop-notebook.jpg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-  //   photo:
-  //     "https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=600",
-  // });
 
   const handleInput = (name, value) => {
     const inputValue = value;
@@ -52,10 +38,13 @@ function App() {
   const handleClickCreateCard = (e) => {
     e.preventDefault();
     api(dataCard).then((response) => {
-      setUrl(response.cardURL);
-      console.log(response.cardURL);
-      return response;
-    });
+      if (response.succes) {
+        setUrl(response.cardURL);
+        setFetchSuccess(true);
+      } else {
+        setFetchSuccess(false);
+      }
+    }, []);
   };
 
   return (

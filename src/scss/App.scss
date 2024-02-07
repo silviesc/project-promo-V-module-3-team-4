@@ -263,10 +263,24 @@
 	}
 
 	&__card {
-		color: white;
-		text-align: center;
-		padding: 20px;
-	}
+        font-family: 'Montserrat';
+        color: white;
+        text-align: center;
+        padding: 20px;
+        &--text {
+            color:white;
+            text-decoration: none;
+        }
+		&--textError {
+			text-decoration: none;
+			color: red;
+		}
+        &--link {
+            font-weight: bold;
+            color:white;
+            text-decoration: none;
+        }
+    }
 }
 
 //Botones que aún no usamos
