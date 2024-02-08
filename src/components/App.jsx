@@ -17,9 +17,9 @@ function App() {
     autor: "",
     job: "",
     image:
-      "https://images.pexels.com/photos/7105/coffee-iphone-laptop-notebook.jpg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+      "",
     photo:
-      "https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "",
   };
   const [dataCard, setDataCard] = useState(ls.get("card", data));
   const [url, setUrl] = useState("");
