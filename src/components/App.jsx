@@ -47,6 +47,13 @@ function App() {
     });
   };
   
+  const handleReset = (ev) => {
+    ev.preventDefault();
+    ls.remove('card');
+    setDataCard(data);
+    setFetchSuccess(null);
+  }
+
   return (
     <>
       <div className="container">
@@ -57,6 +64,7 @@ function App() {
           handleClickCreateCard={handleClickCreateCard}
           url={url}
           fetchSuccess={fetchSuccess}
+          handleReset={handleReset}
         />
         <Footer />
       </div>
