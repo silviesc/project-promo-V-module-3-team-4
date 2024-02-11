@@ -6,7 +6,7 @@ const Preview = ({ dataCard }) => {
 		<section className="preview">
 			<img
 				className="image preview__image"
-				src={dataCard.image || cover}
+				src={dataCard.photo || cover}
 				alt="Imagen del proyecto"
 			/>
 
@@ -38,7 +38,7 @@ const Preview = ({ dataCard }) => {
 						</a>
 
 						<a
-							href={`https://www.github.com/${dataCard.repo}`}
+							href={dataCard.repo}
 							target="_blank"
 						>
 							<i className="fa-brands fa-github previewProject__technologies--github" />
@@ -49,7 +49,7 @@ const Preview = ({ dataCard }) => {
 				<section className="info-autor previewAutor">
 					<img
 						className="image previewAutor__image"
-						src={dataCard.photo || user}
+						src={dataCard.image || user}
 						alt="Imagen del autor"
 					/>
 					<p className="job previewAutor__job">

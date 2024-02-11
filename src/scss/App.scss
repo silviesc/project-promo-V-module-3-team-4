@@ -145,9 +145,10 @@
 			padding-top: 5px;
 			font-size: 13px;
 			font-family: 'Montserrat', sans-serif;
+			font-weight: bold;
 
 			&::placeholder {
-				color: #ffffff;
+				color: grey;
 			}
 		}
 
@@ -163,7 +164,7 @@
 			font-family: 'Montserrat', sans-serif;
 
 			&::placeholder {
-				color: #ffffff;
+				color: grey;
 			}
 		}
 	}
@@ -185,7 +186,8 @@
 			font-family: 'Montserrat', sans-serif;
 
 			&::placeholder {
-				color: #ffffff;
+				color: grey;
+				
 			}
 		}
 	}
@@ -198,6 +200,7 @@
 		gap: 20px;
 		align-items: center;
 		padding-top: 20px;
+		
 
 		&--upload {
 			font-weight: bold;
@@ -216,6 +219,7 @@
 			height: 43px;
 			background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
 			border-radius: 40px;
+			cursor: pointer;
 			@media (min-width: 768px) {
 				font-size: 12px;
 			}
@@ -243,6 +247,7 @@
 			height: 43px;
 			background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
 			border-radius: 40px;
+			cursor: pointer;
 			@media (min-width: 768px) {
 				font-size: 16px;
 			}
@@ -273,8 +278,15 @@
         }
 		&--textError {
 			text-decoration: none;
-			color: red;
+			color:turquoise;
+			font-size: 20px;
+			font-weight: bold;
 		}
+		&--textError2 {
+			color:turquoise;
+			font-size: 18px;
+		}
+		
         &--link {
             font-weight: bold;
             color:white;

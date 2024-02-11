@@ -2,7 +2,7 @@ import GetAvatar from "./GetAvatar";
 import Message from "./Message";
 import Error from "./Error";
 
-const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess}) => {
+const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess, isValidInput}) => {
 
   return (
     <form className="form">
@@ -37,14 +37,14 @@ const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess}
           type="text"
           name="repo"
           id="repo"
-          placeholder="Repo"
+          placeholder="Repositorio:  https://github.com/silviesc/project-promo-V-module-3-team-4"
           onChange={(e) => handleInput(e.target.name, e.target.value)}
           value={dataCard.repo}
         />
         <input
           className="form__project--input"
           type="text"
-          placeholder="Demo"
+          placeholder="Demo:  https://silviesc.github.io/project-promo-V-module-3-team-4/"
           name="demo"
           id="demo"
           onChange={(e) => handleInput(e.target.name, e.target.value)}
@@ -53,7 +53,7 @@ const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess}
         <input
           className="form__project--input"
           type="text"
-          placeholder="Tecnologías"
+          placeholder="Tecnologías:  HTML, JS,..."
           name="technologies"
           id="technologies"
           onChange={(e) => handleInput(e.target.name, e.target.value)}
@@ -100,12 +100,12 @@ const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess}
         <GetAvatar
           updateAvatar={handleInput}
           text="Subir foto de proyecto"
-          nameInput="image"
+          nameInput="photo"
         />
         <GetAvatar
           updateAvatar={handleInput}
           text="Subir foto de autora"
-          nameInput="photo"
+          nameInput="image"
         />
       </section>
       <section className="form__buttonsImg">
@@ -118,7 +118,7 @@ const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess}
       </section>
 
       <section>
-        {fetchSuccess === null ? null : fetchSuccess ? <Message url={url}/> : <Error/>}
+        {fetchSuccess === null ? null : fetchSuccess ? <Message url={url}/> : <Error isValidInput={isValidInput}/>}
       </section>
         
     </form>
