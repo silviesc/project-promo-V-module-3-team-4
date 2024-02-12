@@ -81,7 +81,29 @@
 		@media (min-width: 768px) {
 			display: none;
 		}
+
+		&--new {
+			font-family: 'Roboto', sans-serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		color: white;
+		text-transform: uppercase;
+		font-size: 10px;
+		margin: auto;
+		border-radius: 20px;
+		height: 20px;
+		width: 115px;
+		background-color: #8176af;
+		}
 	}
+	&__link {
+		text-decoration: none;
+	}
+}
+.landing {
+	height: 80vh;
 }
 
 .form {
@@ -219,10 +241,6 @@
 			background: linear-gradient(90deg, #8176af -1.57%, #c0b7e8 98.43%);
 			border-radius: 40px;
 			cursor: pointer;
-<<<<<<< HEAD
-=======
-
->>>>>>> silvia
 			@media (min-width: 768px) {
 				font-size: 12px;
 			}
@@ -309,20 +327,6 @@
         }
     }
 }
-
-//Botones que aún no usamos
-
-// .btn-color {
-// 	border-radius: 20px;
-// 	width: 85px;
-// 	height: 30px;
-// 	font-weight: bold;
-// }
-
-// .btn-color-dark {
-// 	background-color: black;
-// 	color: white;
-// }
 
 .hidden {
 	display: none;

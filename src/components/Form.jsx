@@ -2,7 +2,7 @@ import GetAvatar from "./GetAvatar";
 import Message from "./Message";
 import Error from "./Error";
 
-const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess, handleReset}) => {
+const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess, handleReset, isValidInput}) => {
 
   return (
     <form className="form">
