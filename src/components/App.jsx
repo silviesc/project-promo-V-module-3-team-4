@@ -64,6 +64,10 @@ function App() {
       return <p>Error: Rellena el nombre de la autora</p>;
     } else if (dataCard.job === "") {
       return <p>Error: Rellena el trabajo de la autora</p>;
+    } else if (dataCard.image === "") {
+      return <p>Error: Sube una foto de la autora</p>
+    } else if (dataCard.photo === "") {
+      return <p>Error: Sube una foto del proyecto</p>
     }
   };
 
