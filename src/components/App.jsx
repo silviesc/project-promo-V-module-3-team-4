@@ -47,7 +47,6 @@ function App() {
       }
     });
   };
-<<<<<<< HEAD
 
   const isValidInput = () => {
     if (dataCard.name === '') {
@@ -68,7 +67,6 @@ function App() {
       return <p>Rellena el trabajo de la autora</p>;
     }
   };
-=======
   
   const handleReset = (ev) => {
     ev.preventDefault();
@@ -77,7 +75,6 @@ function App() {
     setFetchSuccess(null);
   }
 
->>>>>>> silvia
   return (
     <>
       <div className="container">
@@ -88,11 +85,8 @@ function App() {
           handleClickCreateCard={handleClickCreateCard}
           url={url}
           fetchSuccess={fetchSuccess}
-<<<<<<< HEAD
           isValidInput={isValidInput}
-=======
           handleReset={handleReset}
->>>>>>> silvia
         />
         <Footer />
       </div>
