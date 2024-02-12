@@ -49,21 +49,21 @@ function App() {
 
   const isValidInput = () => {
     if (dataCard.name === "") {
-      return <p>Rellena el nombre del proyecto</p>;
+      return <p>Error: Rellena el nombre del proyecto</p>;
     } else if (dataCard.slogan === "") {
-      return <p>Rellena el nombre del slogan</p>;
+      return <p>Error: Rellena el nombre del slogan</p>;
     } else if (dataCard.repo === "") {
-      return <p>Rellena el nombre del repositorio</p>;
+      return <p>Error: Rellena el nombre del repositorio</p>;
     } else if (dataCard.demo === "") {
-      return <p>Rellena el nombre de la demo</p>;
+      return <p>Error: Rellena el nombre de la demo</p>;
     } else if (dataCard.technologies === "") {
-      return <p>Rellena el nombre de las tecnologías</p>;
+      return <p>Error: Rellena el nombre de las tecnologías</p>;
     } else if (dataCard.desc === "") {
-      return <p>Rellena el nombre de la descripción</p>;
+      return <p>Error: Rellena el nombre de la descripción</p>;
     } else if (dataCard.author === "") {
-      return <p>Rellena el nombre de la autora</p>;
+      return <p>Error: Rellena el nombre de la autora</p>;
     } else if (dataCard.job === "") {
-      return <p>Rellena el trabajo de la autora</p>;
+      return <p>Error: Rellena el trabajo de la autora</p>;
     }
   };
 
