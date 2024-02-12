@@ -97,16 +97,18 @@ const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess,
       </fieldset>
 
       <section className="form__buttonsImg">
-        <GetAvatar
-          updateAvatar={handleInput}
-          text="Subir foto de proyecto"
-          nameInput="photo"
-        />
-        <GetAvatar
-          updateAvatar={handleInput}
-          text="Subir foto de autora"
-          nameInput="image"
-        />
+        <div className="form__buttonsImg--group">
+          <GetAvatar
+            updateAvatar={handleInput}
+            text="Subir foto de proyecto"
+            nameInput="photo"
+          />
+          <GetAvatar
+            updateAvatar={handleInput}
+            text="Subir foto de autora"
+            nameInput="image"
+          />
+        </div>
         <button className="form__buttonsImg--reset" onClick={handleReset}>Limpiar datos</button>
 
       </section>
