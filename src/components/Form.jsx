@@ -108,6 +108,7 @@ const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess,
           nameInput="image"
         />
         <button className="form__buttonsImg--reset" onClick={handleReset}>Limpiar datos</button>
+
       </section>
       <section className="form__buttonsImg">
         <button
