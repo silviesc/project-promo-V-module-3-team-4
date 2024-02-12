@@ -8,18 +8,18 @@ import ls from '../services/localStorage';
 
 function App() {
   const data = {
-    name: '',
-    slogan: '',
-    technologies: '',
-    repo: '',
-    demo: '',
-    desc: '',
-    autor: '',
-    job: '',
-    photo:
-      'https://images.pexels.com/photos/7105/coffee-iphone-laptop-notebook.jpg?auto=compress&cs=tinysrgb&w=600&lazy=load',
+    name: "",
+    slogan: "",
+    technologies: "",
+    repo: "",
+    demo: "",
+    desc: "",
+    autor: "",
+    job: "",
     image:
-      'https://images.pexels.com/photos/1587009/pexels-photo-1587009.jpeg?auto=compress&cs=tinysrgb&w=600',
+      "",
+    photo:
+      "",
   };
   const [dataCard, setDataCard] = useState(ls.get('card', data));
   const [url, setUrl] = useState('');
@@ -47,6 +47,7 @@ function App() {
       }
     });
   };
+<<<<<<< HEAD
 
   const isValidInput = () => {
     if (dataCard.name === '') {
@@ -67,6 +68,16 @@ function App() {
       return <p>Rellena el trabajo de la autora</p>;
     }
   };
+=======
+  
+  const handleReset = (ev) => {
+    ev.preventDefault();
+    ls.remove('card');
+    setDataCard(data);
+    setFetchSuccess(null);
+  }
+
+>>>>>>> silvia
   return (
     <>
       <div className="container">
@@ -77,7 +88,11 @@ function App() {
           handleClickCreateCard={handleClickCreateCard}
           url={url}
           fetchSuccess={fetchSuccess}
+<<<<<<< HEAD
           isValidInput={isValidInput}
+=======
+          handleReset={handleReset}
+>>>>>>> silvia
         />
         <Footer />
       </div>

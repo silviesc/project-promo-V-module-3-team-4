@@ -2,13 +2,13 @@ import Form from './Form';
 import Preview from './Preview';
 import TitleSection from './TitleSection';
 
-const Main = ({ dataCard, handleInput, isValidInput, handleClickCreateCard, url, fetchSuccess}) => {
+const Main = ({ dataCard, handleInput,  handleClickCreateCard, url, fetchSuccess, handleReset}) => {
 	return (
 		<main>
 			<TitleSection />
 			<div className="main">
 				<Preview dataCard={dataCard} />
-				<Form handleInput={handleInput} handleClickCreateCard={handleClickCreateCard} url={url} dataCard={dataCard} fetchSuccess={fetchSuccess} isValidInput={isValidInput}/>
+				<Form handleInput={handleInput} handleClickCreateCard={handleClickCreateCard} url={url} dataCard={dataCard} fetchSuccess={fetchSuccess} handleReset={handleReset}/>
 			</div>
 		</main>
 	);

@@ -2,7 +2,7 @@ import GetAvatar from "./GetAvatar";
 import Message from "./Message";
 import Error from "./Error";
 
-const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess, isValidInput}) => {
+const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess, handleReset}) => {
 
   return (
     <form className="form">
@@ -107,6 +107,7 @@ const Form = ({ handleInput, handleClickCreateCard, url, dataCard, fetchSuccess,
           text="Subir foto de autora"
           nameInput="image"
         />
+        <button className="form__buttonsImg--reset" onClick={handleReset}>Limpiar datos</button>
       </section>
       <section className="form__buttonsImg">
         <button
